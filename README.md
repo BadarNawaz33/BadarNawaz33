@@ -59,9 +59,16 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=BadarNawaz33&theme=default&hide_border=true" alt="Badar's GitHub Streak" />
 </p>
 
+
+## 💻 Languages I Use Most
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=BadarNawaz33&layout=compact&theme=default&hide_border=true" alt="Top Languages" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" />
 </p>
+
 
 ---
 
