@@ -54,6 +54,16 @@
 
 ---
 
+## ✨ Random Quote
+
+<!-- QUOTE-START -->
+> Loading...
+<!-- QUOTE-END -->
+
+---
+
+
+<!---
 ## 📈 GitHub Analytics
 
 <p align="center">
@@ -65,6 +75,8 @@
 </p>
 
 ---
+-->
+
 
 ## 💻 Languages I Use Most
 
