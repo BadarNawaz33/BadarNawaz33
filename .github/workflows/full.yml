@@ -1,0 +1,80 @@
+name: GitHub Snake + Pacman Game (Advanced)
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # every day at midnight UTC
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Generate Snake animations
+      - name: Generate GitHub Contributions Snake Animations
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Step 3: Randomly select Pacman theme
+      - name: Randomly select Pacman theme
+        id: random-theme
+        run: |
+          themes=("halloween" "matrix" "candyland")
+          SELECTED_THEME=${themes[$RANDOM % ${#themes[@]}]}
+          echo "Selected theme: $SELECTED_THEME"
+          echo "theme=$SELECTED_THEME" >> $GITHUB_ENV
+
+      # Step 4: Set Pacman theme colors
+      - name: Set Pacman Theme Colors
+        id: set-colors
+        run: |
+          if [ "${{ env.theme }}" == "halloween" ]; then
+            echo "color_pacman=#FFA500" >> $GITHUB_ENV
+            echo "color_ghost=#800080" >> $GITHUB_ENV
+            echo "color_candy=#FF0000" >> $GITHUB_ENV
+          elif [ "${{ env.theme }}" == "matrix" ]; then
+            echo "color_pacman=#00FF00" >> $GITHUB_ENV
+            echo "color_ghost=#FF00FF" >> $GITHUB_ENV
+            echo "color_candy=#00FFFF" >> $GITHUB_ENV
+          elif [ "${{ env.theme }}" == "candyland" ]; then
+            echo "color_pacman=#FF69B4" >> $GITHUB_ENV
+            echo "color_ghost=#FFD700" >> $GITHUB_ENV
+            echo "color_candy=#00CED1" >> $GITHUB_ENV
+          fi
+
+      # Step 5: Generate Pacman Contribution Graph
+      - name: Generate Pacman Graph based on Theme
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          theme: "auto"
+          color_pacman: ${{ env.color_pacman }}
+          color_ghost: ${{ env.color_ghost }}
+          color_candy: ${{ env.color_candy }}
+          ghost_count: 25
+          pacman_speed: 5
+
+      # Step 6: Deploy all animations (Snake + Pacman) to 'output' branch
+      - name: Deploy to Output Branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          commit_message: "Update Snake + Pacman Animations [skip ci]"
