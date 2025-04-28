@@ -57,7 +57,7 @@
 ## ✨ Random Quote
 
 <!-- QUOTE-START -->
-> Loading...
+> 
 <!-- QUOTE-END -->
 
 ---
