@@ -5,8 +5,12 @@
   <img src="https://readme-typing-svg.herokuapp.com/?lines=Software%20Engineer;Data%20Engineer;Cloud%20Enthusiast;Always%20learning%20new%20things!&center=true&width=500&height=50">
 </h3>
 
+<!-- Center both GIFs together nicely -->
 <p align="center">
-  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="350" height="220">
+  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="320" height="200" alt="welcome gif" />
+  &nbsp; &nbsp;
+  <!-- <img src="https://i.giphy.com/rgeQGE5CviWW08Ty7n.webp" width="200" height="200" alt="funny gif" /> -->
+  <img src="https://i.imgflip.com/7efnmy.gif" width="200" height="200" alt="funny gif" />
 </p>
 
 <p align="center">
@@ -99,12 +103,6 @@
 
 ## 🐍 GitHub Snake Contribution Graph
 
-<!-- <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/github-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/github-snake.svg" />
-</picture> -->
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake.svg" />
@@ -112,8 +110,8 @@
 </picture>
 
 ---
-## GitHub Pacman Contribution Graph
-###
+
+## 🕹️ GitHub Pacman Contribution Graph
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/pacman-contribution-graph-dark.svg">
@@ -121,7 +119,7 @@
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/pacman-contribution-graph.svg">
 </picture>
 
-###
+---
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0e6e55&height=100&section=footer"/>
