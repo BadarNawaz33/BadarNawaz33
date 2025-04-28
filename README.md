@@ -111,6 +111,8 @@
 
 ---
 
+
+<!---
 ## 🕹️ GitHub Pacman Contribution Graph
 
 <picture>
@@ -118,8 +120,9 @@
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/pacman-contribution-graph.svg">
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/pacman-contribution-graph.svg">
 </picture>
-
 ---
+-->
+
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0e6e55&height=100&section=footer"/>
