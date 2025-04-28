@@ -41,6 +41,7 @@
 ---
 
 ## 🏆 Certifications (in progress / planned)
+
 <p align="center">
   <img src="https://img.shields.io/badge/AWS%20Certified%20Cloud%20Practitioner-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" />
   <img src="https://img.shields.io/badge/TensorFlow%20Developer-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
@@ -59,6 +60,7 @@
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=BadarNawaz33&theme=default&hide_border=true" alt="Badar's GitHub Streak" />
 </p>
 
+---
 
 ## 💻 Languages I Use Most
 
@@ -68,7 +70,6 @@
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
   <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" />
 </p>
-
 
 ---
 
@@ -93,6 +94,22 @@
     <img src="https://img.shields.io/badge/GitHub-BadarNawaz33-black?style=for-the-badge&logo=github" />
   </a>
 </p>
+
+---
+
+## 🐍 GitHub Snake Contribution Graph
+
+<!-- <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/BadarNawaz33/BadarNawaz33/output/github-snake.svg" />
+</picture> -->
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/tobiasmeyhoefer/tobiasmeyhoefer/output/github-snake.svg" />
+</picture>
 
 ---
 
