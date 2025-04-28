@@ -2,28 +2,47 @@ name: Update README with Random Quote
 
 on:
   schedule:
-    - cron: "0 */12 * * *"  # Every 12 hours (UTC time)
-  workflow_dispatch:        # Allows you to manually trigger if needed
+    - cron: "0 */12 * * *"  # Every 12 hours UTC
+  workflow_dispatch:        # Manual trigger option
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Fetch a random quote and update README
+      - name: Fetch a Random Quote and Update README
         run: |
-          quote=$(curl -s https://api.quotable.io/random | jq -r '.content + " — " + .author')
-          echo "Fetched Quote: $quote"
-          
-          # Replace the content between markers
-          sed -i '/<!-- QUOTE-START -->/,/<!-- QUOTE-END -->/c\<!-- QUOTE-START -->\n> '"$quote"'\n<!-- QUOTE-END -->' README.md
+          # Fetch random quote from quotable API
+          response=$(curl -s https://api.quotable.io/random)
 
-      - name: Commit and Push if README changed
+          if [ -z "$response" ]; then
+            echo "❌ Failed to fetch response from API."
+            exit 1
+          fi
+
+          # Parse the content and author
+          quote=$(echo "$response" | jq -r '.content + " — " + .author')
+
+          if [ -z "$quote" ]; then
+            echo "❌ Failed to parse quote."
+            exit 1
+          fi
+
+          echo "✅ Fetched Quote: $quote"
+
+          # Replace between the markers in README.md
+          awk -v q="> $quote" '
+          /<!-- QUOTE-START -->/ { print; getline; print q; next }
+          { print }
+          ' README.md > temp.md && mv temp.md README.md
+
+      - name: Commit and Push Changes
         run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update random quote"
+          git diff --quiet && git diff --staged --quiet || git commit -m "🔄 Update random quote"
           git push
